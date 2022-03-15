@@ -1,0 +1,69 @@
+[
+    {
+        "title" : "Is This Love",
+        "artist" : "Corinne Bailey Rae",
+        "genre" : ["R&B", "Soul", "Alternative", "Indie", "Pop"],
+        "year" : 2010
+    },
+    {
+        "title" : "Put Your Records On",
+        "artist" : "Corinne Bailey Rae",
+        "genre" : ["R&B", "Soul", "Alternative", "Indie", "Pop", "Jazz"],
+        "year" : 2006
+    },
+    {
+        "title" : "R&B",
+        "artist" : "Colette Lush",
+        "genre" : ["R&B", "Soul"],
+        "year" : 2020
+    },
+    {
+        "title" : "Beach Bummer",
+        "artist" : "No Vacation",
+        "genre" : ["Alternative", "Indie"],
+        "year" : 2015
+    },
+    {
+        "title" : "My Girl",
+        "artist" : "The Temptations",
+        "genre" : ["R&B", "Soul"],
+        "year" : 1965
+    },
+    {
+        "title" : "Corny",
+        "artist" : "Rema",
+        "genre" : ["Afrobeats", "Hip-Hop", "Rap"],
+        "year" : 2020
+    },
+    {
+        "title" : "Die For You",
+        "artist" : "The Weeknd",
+        "genre" : ["R&B", "Soul"],
+        "year" : 2016
+    },
+    {
+        "title" : "Love On Top",
+        "artist" : "Beyoncé",
+        "genre" : ["R&B", "Soul", "Pop"],
+        "year" : 2011
+    },
+    {
+        "title" : "Baba",
+        "artist" : "Aminé",
+        "genre" : ["Hip-Hop", "Rap"],
+        "year" : 2016
+    },
+    {
+        "title" : "Love Yourz",
+        "artist" : "J Cole",
+        "genre" : ["Hip-Hop", "Rap", "R&B", "Soul"],
+        "year" : 2014
+    }
+]
+
+
+
+
+
+
+
