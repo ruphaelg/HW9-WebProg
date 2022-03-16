@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="utf-8">
+        <title>Song List</title>
+        
+<script type="text/javascript">
+    var jsonArray = new Array()
+        function loadFile() {
+			
+			request = new XMLHttpRequest();
+			console.log("1 - request object created");
+ 
+			request.open("GET", "https://ruphaelg.github.io/HW9-WebProg/SongList.json", true);
+
+			console.log("2 - opened request file");
+ 
+			request.onreadystatechange = function() {
+				console.log("3 - readystatechange event fired.");
+ 
+				if (request.readyState == 4 && request.status == 200) {
+
+					result = request.responseText;
+                    
+					songs = JSON.parse(result);
+                    document.getElementById("jsonString").innerHTML = result;
+					
+					str = "<ul>";
+					songs.forEach(function(song) { 
+					  str += "<li>" + song.title + " <br> " + "Artist: " +
+                          song.artist + "<br>" + 
+                         "Genres: " + song.genre.join(" ") + "<br>" + "Year Released: " +
+                         song.year + "</li>" + "<br>";
+                         jsonArray.push(song);
+                         
+					}) 
+					str += "</ul>";
+                    
+					document.getElementById("data").innerHTML =str;
+                    
+				}
+				else if (request.readyState == 4 && request.status != 200) {
+
+				document.getElementById("data").innerHTML = "Something is wrong!  Check the logs to see where this went off the rails";
+
+				}
+
+				else if (request.readyState == 3) {
+
+					document.getElementById("data").innerHTML = "Too soon!  Try again";
+
+				}
+
+			}
+		
+			request.send();
+			console.log("4 - Request sent");
+		}
+        
+        function genreRequest(){
+            var val;
+             index = document.getElementById("genres").selectedIndex ;
+            if (index>=0)
+                 val =    
+            document.getElementById("genres").options[index].value;
+            var songRequests = "";
+        
+            for (var i = 0; i < jsonArray.length; i++) {
+                for (var r = 0; r < jsonArray[i].genre.length; r++){
+                    if (val == jsonArray[i].genre[r]){
+                     songRequests += jsonArray[i].title + " " + "<br>";
+                    }
+                }
+                 document.getElementById("genreForm").innerHTML = songRequests;
+            }
+        }
+            
+        
+            
+    
+                 
+</script>
+    </head>
+    <body onload="loadFile()">
+        <h1>SONG LIST</h1>
+        <h2>PART 2: </h2> <br>
+        <div id="jsonString">
+            Loading....
+        </div>
+        <br>
+        <h2>PART 3: </h2> <br>
+        <div id="data">
+            Loading....
+        </div>
+        <br>
+        <h2>PART 4: </h2> <br>
+        <form id="form" onsubmit="genreRequest()" method="post">
+            <label for="genres"> Select a Genre: </label>
+            <select id="genres">
+                <option value="R&B"> R&B </option>
+                <option value="Alternative"> Alternative </option>
+                <option value="Indie"> Indie </option>
+                <option value="Pop"> Pop </option>
+                <option value="Jazz"> Jazz </option>
+                <option value="Soul"> Soul </option>
+                <option value="Afrobeats"> Afrobeats </option>
+                <option value="Hip-Hop"> Hip-Hop </option>
+                <option value="Rap"> Rap </option>
+            
+            </select>
+            <button onclick="genreRequest()" type="button" id="filter" > Filter </button>
+        </form><br>
+        
+        <div id="genreForm">
+            
+        </div>
+        
+        <br><br>
+    </body>
+</html>
